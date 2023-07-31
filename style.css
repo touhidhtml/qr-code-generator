@@ -96,6 +96,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 5px;
 }
 
 /* BUTTON--------------- */
@@ -188,5 +189,8 @@ button:focus::after {
 @media only screen and (max-width: 768px) and (min-width: 0px) {
   .all-input {
     margin-bottom: 10px;
+  }
+  .second {
+   display: none;
   }
 }
