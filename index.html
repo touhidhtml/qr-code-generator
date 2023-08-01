@@ -1,52 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="fav2.png" type="image/x-icon">
-    <title>QR Code Generator</title>
-  </head>
-  <body>
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <div class="content">
-      <section>
-        <div class="main-section">
-          <div class="container">
-            <!-- input section start here--------- -->
-            <div class="first">
-              <!-- all input start here-------- -->
-              <input class="all-input" type="text"/>
-              <input class="all-input" type="text"/>
-              <input class="all-input" type="text"/>
-              <!-- al input end here-------- -->
 
-              <button class="button btn1">Generate</button>
-            </div>
-            <!-- input section end here--------- -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="fav2.png" type="image/x-icon">
+  <!-- Include qrcode-generator library -->
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <title>QR Code Generator</title>
+</head>
 
-            <!-- devider  here---------->
-            <div class="second"></div>
-            <!-- devider  here---------->
+<body>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <div class="content">
+    <section>
+      <div class="main-section">
+        <div class="container">
+          <!-- input section start here--------- -->
+          <div class="first">
+            <!-- all input start here-------- -->
+            <input id="name" placeholder="Enter your name" class="all-input" type="text" />
+            <input id="phone" placeholder="Enter your phone" class="all-input" type="number" />
+            <input id="contact" placeholder="Enter your social links" class="all-input" type="text" />
+            <!-- al input end here-------- -->
 
-            <!-- qr code start here------------ -->
-            <div class="third">
-              <div class="qr-box">
-                <img src="" alt="" />
-              </div>
-              <div class="all-button">
-                <button class="button btn2">Download</button>
-                <button class="button btn3">Share Now</button>
-              </div>
-            </div>
-            <!-- qr code end here------------ -->
+            <button id="generateButton" class="button btn1 ">Generate</button>
+            <button id="tryAgain" class="button btn1 ">Try Again</button>
           </div>
-        </div>
-      </section>
-    </div>
+          <!-- input section end here--------- -->
 
-    <script src="main.js"></script>
-  </body>
+          <!-- devider  here---------->
+          <div class="second"></div>
+          <!-- devider  here---------->
+
+          <!-- qr code start here------------ -->
+          <div class="third">
+            <div id="qrcode-container" class="qr-box">
+              <p id="qrShow">QR</p>
+            </div>
+            <div class="all-button">
+              <button id="downloadButton" class="button btn2">Download</button>
+              <button id="shareButton" class="button btn3">Share Now</button>
+            </div>
+          </div>
+          <!-- qr code end here------------ -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
