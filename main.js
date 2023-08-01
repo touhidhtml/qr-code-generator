@@ -59,7 +59,6 @@ document.getElementById('generateButton').addEventListener('click', function () 
         document.getElementById('generateButton').style.display = 'none'
         tryAgainBtn.style.display = 'block'
         document.getElementById('downloadButton').style.display = 'block'
-        document.getElementById('shareButton').style.display = 'block'
         document.getElementById('qrShow').style.display = 'none'
 
     }
@@ -75,30 +74,4 @@ document.getElementById('downloadButton').addEventListener('click', function () 
 
     // Use FileSaver.js to trigger the download
     saveAs(imageData, fileName);
-});
-
-// For Share Button
-
-document.getElementById('shareButton').addEventListener('click', function () {
-    const qrContainer = document.getElementById('qrcode-container');
-    const canvas = qrContainer.querySelector('canvas');
-    const imageData = canvas.toDataURL('image/png'); // Convert canvas to image data URL
-
-    if (navigator.share) {
-        // If Web Share API is supported
-        navigator.share({
-            title: 'Share QR Code',
-            text: 'Check out this QR code!',
-            url: imageData,
-        })
-            .then(() => console.log('QR code shared successfully!'))
-            .catch((error) => console.error('Error sharing QR code:', error));
-    } else {
-        // Fallback for browsers that do not support Web Share API
-        const downloadLink = document.createElement('a');
-        downloadLink.href = imageData;
-        downloadLink.download = 'qrcode.png';
-        downloadLink.target = '_blank';
-        downloadLink.click();
-    }
 });
