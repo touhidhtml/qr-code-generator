@@ -116,6 +116,7 @@
   margin-top: 15px;
 }
 
+/* animation button--------- */
 .button
  {
   min-width: 50px;
@@ -185,8 +186,6 @@ button:focus::after {
   display: none;
 }
 
-
-
 @keyframes ring {
   0% {
     width: 30px;
@@ -199,6 +198,7 @@ button:focus::after {
     opacity: 0;
   }
 }
+
 
 /* responsive------- */
 @media only screen and (max-width: 767px) and (min-width: 0px) {
